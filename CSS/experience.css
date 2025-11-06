@@ -1,0 +1,311 @@
+/* ----------------------------------- */
+/* الإعدادات العامة والخلفية */
+/* ----------------------------------- */
+:root {
+    --main-color: #00ffff;
+    --text-color: #e0e0e0;
+    --dark-bg: #101014;
+}
+
+body {
+    background-color: var(--dark-bg);
+    color: var(--text-color);
+    font-family: 'Arial', sans-serif;
+    overflow-x: hidden;
+}
+
+/* تأثير التوهج المائي (الخلفية) */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at 75% 15%, rgba(0, 255, 255, 0.1) 0%, transparent 40%),
+        radial-gradient(circle at 25% 85%, rgba(138, 43, 226, 0.15) 0%, transparent 45%);
+    pointer-events: none;
+    z-index: -1;
+    filter: blur(100px);
+}
+
+/* العنوان الزمني الكبير */
+.time-header {
+    font-size: 8vw;
+    font-weight: 900;
+    color: rgba(255, 255, 255, 0.1);
+    text-shadow: 0 0 10px rgba(0, 255, 255, 0.3);
+    margin-top: 65px !important;
+    padding-top: 20px;
+}
+
+/* Header Section */
+.section-header {
+    margin-bottom: 4rem;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: var(--text-color);
+    text-transform: uppercase;
+}
+
+.underline {
+    width: 150px;
+    height: 2px;
+    background-color: var(--main-color);
+    box-shadow: 0 0 10px var(--main-color);
+}
+
+.section-description {
+    font-size: 1rem;
+    line-height: 1.8;
+    color: #b0b0b0;
+}
+
+/* Experience Section */
+.experience-section {
+    padding-top: 70px !important;
+    margin-top: 0 !important;
+}
+
+/* Experience Timeline */
+.experience-timeline {
+    position: relative;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.experience-timeline::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: linear-gradient(to bottom, var(--main-color), rgba(0, 255, 255, 0.3));
+    transform: translateX(-50%);
+    z-index: 1;
+}
+
+/* Experience Cards */
+.experience-card {
+    background: rgba(20, 20, 28, 0.9);
+    border: 1px solid rgba(0, 255, 255, 0.2);
+    border-radius: 15px;
+    margin-bottom: 2rem;
+    position: relative;
+    transition: all 0.3s ease;
+    overflow: hidden;
+}
+
+.experience-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(0, 255, 255, 0.1), transparent);
+    transition: left 0.5s ease;
+}
+
+.experience-card:hover::before {
+    left: 100%;
+}
+
+.experience-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--main-color);
+    box-shadow: 0 15px 30px rgba(0, 255, 255, 0.3);
+}
+
+.experience-card:nth-child(odd) {
+    margin-right: 50%;
+    padding-right: 2rem;
+}
+
+.experience-card:nth-child(even) {
+    margin-left: 50%;
+    padding-left: 2rem;
+}
+
+.experience-card:nth-child(odd)::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    right: -10px;
+    width: 20px;
+    height: 20px;
+    background: var(--main-color);
+    border-radius: 50%;
+    transform: translateY(-50%);
+    box-shadow: 0 0 15px var(--main-color);
+    z-index: 2;
+}
+
+.experience-card:nth-child(even)::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: -10px;
+    width: 20px;
+    height: 20px;
+    background: var(--main-color);
+    border-radius: 50%;
+    transform: translateY(-50%);
+    box-shadow: 0 0 15px var(--main-color);
+    z-index: 2;
+}
+
+/* Card Content */
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 1.5rem 1.5rem 1rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.company-name {
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: var(--text-color);
+    margin-bottom: 0.5rem;
+}
+
+.job-title {
+    font-size: 1rem;
+    color: var(--main-color);
+    text-shadow: 0 0 5px rgba(0, 255, 255, 0.3);
+    margin: 0;
+}
+
+.duration {
+    font-size: 0.9rem;
+    color: #888;
+    font-weight: 500;
+    background: rgba(0, 255, 255, 0.1);
+    padding: 0.3rem 0.8rem;
+    border-radius: 20px;
+    border: 1px solid rgba(0, 255, 255, 0.3);
+}
+
+.card-content {
+    padding: 1.5rem;
+}
+
+.job-description {
+    font-size: 0.95rem;
+    color: #b0b0b0;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+}
+
+.skills-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.skills-tags .skill-tag {
+    background: rgba(0, 255, 255, 0.1);
+    color: var(--main-color);
+    border: 1px solid rgba(0, 255, 255, 0.3);
+    padding: 0.3rem 0.8rem;
+    border-radius: 15px;
+    font-size: 0.8rem;
+    transition: all 0.3s ease;
+}
+
+.skills-tags .skill-tag:hover {
+    background: var(--main-color);
+    color: var(--dark-bg);
+    transform: translateY(-2px);
+}
+
+/* Footer */
+.footer-line {
+    position: relative;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    margin-top: 3rem !important;
+    padding-top: 1.5rem !important;
+}
+
+.footer-line::before {
+    content: '';
+    position: absolute;
+    top: -5px;
+    right: 0;
+    width: 10px;
+    height: 10px;
+    background-color: var(--main-color);
+    border-radius: 50%;
+    box-shadow: 0 0 15px var(--main-color);
+}
+
+.portfolio-year {
+    color: var(--text-color);
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .time-header {
+        font-size: 12vw;
+    }
+
+    .experience-timeline::before {
+        left: 20px;
+    }
+
+    .experience-card:nth-child(odd),
+    .experience-card:nth-child(even) {
+        margin-left: 0;
+        margin-right: 0;
+        padding-left: 3rem;
+        padding-right: 1rem;
+    }
+
+    .experience-card:nth-child(odd)::after,
+    .experience-card:nth-child(even)::after {
+        left: -10px;
+        right: auto;
+    }
+
+    .card-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+    }
+
+    .duration {
+        align-self: flex-start;
+    }
+
+    .section-title {
+        font-size: 2rem;
+    }
+
+    .footer-line {
+        justify-content: center !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .experience-card {
+        padding-left: 2rem !important;
+    }
+
+    .card-header,
+    .card-content {
+        padding: 1rem;
+    }
+
+    .company-name {
+        font-size: 1.2rem;
+    }
+}

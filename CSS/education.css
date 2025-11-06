@@ -1,0 +1,116 @@
+:root {
+    --main-color: #00ffff;
+    --glow-color: #0000ff;
+    --text-color: #e0e0e0;
+    --dark-bg: #101014;
+}
+
+body {
+    background-color: var(--dark-bg);
+    color: var(--text-color);
+    font-family: 'Arial', sans-serif;
+    overflow-x: hidden;
+}
+
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at 75% 15%, rgba(0, 255, 255, 0.1) 0%, transparent 40%),
+        radial-gradient(circle at 25% 85%, rgba(138, 43, 226, 0.15) 0%, transparent 45%);
+    pointer-events: none;
+    z-index: -1;
+    filter: blur(100px);
+}
+
+/* Navigation styles moved to navigation.css */
+
+.time-header {
+    font-size: 8vw;
+    font-weight: 900;
+    color: rgba(255, 255, 255, 0.1);
+    text-shadow: 0 0 10px rgba(0, 255, 255, 0.3);
+    margin-top: 65px !important;
+    padding-top: 20px;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: var(--text-color);
+    text-transform: uppercase;
+}
+
+.underline {
+    width: 150px;
+    height: 2px;
+    background-color: var(--main-color);
+    box-shadow: 0 0 10px var(--main-color);
+}
+
+.description-text {
+    font-size: 1rem;
+    line-height: 1.8;
+    color: #b0b0b0;
+}
+
+.list-column {
+    padding-left: 50px;
+}
+
+.degree-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--text-color);
+    margin-bottom: 0.2rem;
+}
+
+.institution-details {
+    font-size: 1rem;
+    color: var(--main-color);
+    text-shadow: 0 0 3px rgba(0, 255, 255, 0.2);
+}
+
+.footer-line {
+    position: relative;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    margin-top: 3rem !important;
+    padding-top: 1.5rem !important;
+}
+
+.footer-line::before {
+    content: '';
+    position: absolute;
+    top: -5px;
+    right: 0;
+    width: 10px;
+    height: 10px;
+    background-color: var(--main-color);
+    border-radius: 50%;
+    box-shadow: 0 0 15px var(--main-color);
+}
+
+.portfolio-year {
+    color: var(--text-color);
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+@media (max-width: 768px) {
+    .time-header {
+        font-size: 12vw;
+    }
+
+    .list-column {
+        padding-left: 15px;
+        margin-top: 2rem;
+    }
+
+    .footer-line {
+        justify-content: center !important;
+    }
+}

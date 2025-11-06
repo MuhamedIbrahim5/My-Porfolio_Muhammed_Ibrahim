@@ -1,0 +1,190 @@
+/* ========================================
+   NAVIGATION - UNIFIED FOR ALL PAGES
+   ======================================== */
+
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Fix scrollbar shift */
+html {
+    overflow-y: scroll;
+}
+
+body {
+    overflow-x: hidden;
+}
+
+/* Main Navigation Bar */
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 45px;
+    padding: 0 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    z-index: 9999;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Logo */
+.logo {
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    white-space: nowrap;
+    color: #00ffff;
+    text-shadow: 0 0 5px rgba(0, 255, 255, 0.3);
+}
+
+/* Navigation Links Container */
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 35px;
+    margin: 0;
+    padding: 0;
+    align-items: center;
+}
+
+/* Navigation Links */
+.nav-links a {
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+    padding: 12px 0;
+    position: relative;
+    white-space: nowrap;
+    color: #00ffff;
+    text-shadow: 0 0 5px rgba(0, 255, 255, 0.3);
+}
+
+/* Hover Effect */
+.nav-links a:hover {
+    transform: translateY(-1px);
+    text-shadow: 0 0 10px rgba(0, 255, 255, 0.6);
+}
+
+/* Active Link */
+.nav-links a.active {
+    font-weight: 600;
+    text-shadow: 0 0 10px rgba(0, 255, 255, 0.8);
+}
+
+.nav-links a.active::after {
+    content: '';
+    position: absolute;
+    bottom: 8px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: #00ffff;
+    box-shadow: 0 0 8px rgba(0, 255, 255, 0.6);
+}
+
+/* ========================================
+   RESPONSIVE DESIGN
+   ======================================== */
+
+/* Tablet */
+@media (max-width: 1024px) {
+    nav {
+        padding: 0 40px;
+        height: 45px;
+    }
+
+    .nav-links {
+        gap: 25px;
+    }
+
+    .nav-links a {
+        font-size: 11px;
+    }
+
+    .logo {
+        font-size: 12px;
+    }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+    nav {
+        padding: 10px 20px;
+        height: auto;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .logo {
+        font-size: 11px;
+    }
+
+    .nav-links {
+        gap: 20px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .nav-links a {
+        font-size: 10px;
+        padding: 8px 0;
+    }
+}
+
+/* ========================================
+   FOOTER STYLES
+   ======================================== */
+
+.footer {
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+    border-top: 1px solid rgba(52, 152, 219, 0.2);
+    padding: 15px 0;
+    text-align: center;
+    margin-top: 40px;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.footer-text {
+    color: #ecf0f1;
+    font-size: 11px;
+    margin: 4px 0;
+    font-weight: 400;
+    letter-spacing: 0.3px;
+}
+
+.footer-text strong {
+    color: #3498db;
+    font-weight: 600;
+}
+
+.portfolio-badge {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .footer {
+        padding: 12px 0;
+    }
+
+    .footer-text {
+        font-size: 10px;
+    }
+}

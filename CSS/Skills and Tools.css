@@ -1,0 +1,271 @@
+/* ----------------------------------- */
+/* الإعدادات العامة والخلفية */
+/* ----------------------------------- */
+:root {
+    --main-color: #00ffff;
+    /* لون النيون الأساسي (أزرق سماوي) */
+    --text-color: #e0e0e0;
+    --dark-bg: #101014;
+    /* خلفية داكنة جداً */
+    --secondary-glow: #8a2be2;
+    /* توهج بنفسجي للخلفية */
+}
+
+body {
+    background-color: var(--dark-bg);
+    color: var(--text-color);
+    font-family: 'Arial', sans-serif;
+    /* يفضل استبدالها بخط عربي مميز */
+    overflow-x: hidden;
+    /* لمنع ظهور شريط التمرير الأفقي */
+}
+
+/* ----------------------------------- */
+/* تأثير التوهج المائي (الخلفية) */
+/* ----------------------------------- */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at 75% 15%, rgba(0, 255, 255, 0.1) 0%, transparent 40%),
+        radial-gradient(circle at 25% 85%, rgba(138, 43, 226, 0.15) 0%, transparent 45%);
+    /* البنفسجي */
+    pointer-events: none;
+    z-index: -1;
+    filter: blur(100px);
+}
+
+/* Navigation styles moved to navigation.css */
+
+/* ----------------------------------- */
+/* العنوان الزمني الكبير (2021 - 2023 / CAPABILITIES) */
+/* ----------------------------------- */
+.time-header {
+    font-size: 8vw;
+    font-weight: 900;
+    color: rgba(255, 255, 255, 0.1);
+    text-shadow: 0 0 10px rgba(0, 255, 255, 0.3);
+    margin-top: 65px !important;
+    margin-bottom: 20px !important;
+    padding-top: 20px;
+}
+
+/* ----------------------------------- */
+/* الأقسام الرئيسية (Skills, Experience, Education) */
+/* ----------------------------------- */
+.section-title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: var(--text-color);
+    text-transform: uppercase;
+}
+
+.underline {
+    width: 150px;
+    height: 2px;
+    background-color: var(--main-color);
+    box-shadow: 0 0 10px var(--main-color);
+}
+
+.description-text {
+    /* للنصوص التمهيدية في العمود الأيمن */
+    font-size: 1rem;
+    line-height: 1.8;
+    color: #b0b0b0;
+}
+
+.list-column {
+    /* للعمود الذي يحتوي على القوائم (الخبرات، المهارات) */
+    padding-left: 20px;
+    margin-top: 3rem;
+}
+
+/* تنسيقات مشتركة لعناصر القائمة (مثل الخبرات والمهارات) */
+.bullet-icon {
+    /* »» الأيقونة */
+    font-size: 1.5rem;
+    color: var(--main-color);
+    line-height: 1;
+    margin-bottom: -10px;
+    text-shadow: 0 0 8px rgba(0, 255, 255, 0.5);
+    font-weight: bold;
+    display: inline-block;
+    /* ليكون بجانب العنوان */
+    vertical-align: middle;
+}
+
+.group-heading {
+    /* عنوان المجموعة (مثل تطوير الويب والبرمجة) */
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: var(--text-color);
+    margin-bottom: 1rem;
+    display: block;
+    position: relative;
+}
+
+.group-heading::before {
+    content: '»»';
+    color: var(--main-color);
+    font-size: 1.2rem;
+    margin-right: 10px;
+    text-shadow: 0 0 8px rgba(0, 255, 255, 0.5);
+}
+
+
+/* ----------------------------------- */
+/* تنسيقات خاصة بقسم المهارات (Skills Section) */
+/* ----------------------------------- */
+.skill-category-group {
+    margin-bottom: 3rem;
+}
+
+.skill-details-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 10px;
+    margin-top: 1rem;
+    align-items: stretch;
+    width: 100%;
+    max-width: 100%;
+}
+
+.skill-tag {
+    background-color: rgba(0, 255, 255, 0.1);
+    color: var(--main-color);
+    border: 1px solid rgba(0, 255, 255, 0.3);
+    padding: 0.5rem 0.8rem;
+    border-radius: 6px;
+    font-size: 0.85rem;
+    transition: all 0.3s ease;
+    text-shadow: 0 0 5px rgba(0, 255, 255, 0.3);
+    text-align: center;
+    word-wrap: break-word;
+    min-height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    line-height: 1.2;
+}
+
+.skill-tag:hover {
+    background-color: var(--main-color);
+    color: var(--dark-bg);
+    box-shadow: 0 0 15px var(--main-color);
+    transform: translateY(-2px);
+}
+
+
+/* ----------------------------------- */
+/* تنسيقات خاصة بقسم الخبرة (Experience Section) - معاد استخدامها من قبل */
+/* ----------------------------------- */
+.job-details {
+    padding-right: 0 !important;
+}
+
+.company-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--text-color);
+    margin-bottom: 0;
+}
+
+.job-role {
+    font-size: 1rem;
+    color: var(--main-color);
+    text-shadow: 0 0 3px rgba(0, 255, 255, 0.2);
+    margin-bottom: 0;
+}
+
+.job-description {
+    border-left: 1px solid rgba(255, 255, 255, 0.1);
+    padding-right: 20px;
+}
+
+.description-text-job {
+    font-size: 0.95rem;
+    color: #b0b0b0;
+    line-height: 1.6;
+}
+
+
+/* ----------------------------------- */
+/* الخط السفلي والتذييل */
+/* ----------------------------------- */
+.footer-line {
+    position: relative;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    margin-top: 3rem !important;
+    padding-top: 1.5rem !important;
+}
+
+.footer-line::before {
+    content: '';
+    position: absolute;
+    top: -5px;
+    right: 0;
+    width: 10px;
+    height: 10px;
+    background-color: var(--main-color);
+    border-radius: 50%;
+    box-shadow: 0 0 15px var(--main-color);
+}
+
+.portfolio-year {
+    color: var(--text-color);
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* ----------------------------------- */
+/* تعديلات الهاتف (Responsive Design) */
+/* ----------------------------------- */
+@media (max-width: 768px) {
+    .time-header {
+        font-size: 12vw;
+    }
+
+    .list-column {
+        padding-left: 0;
+        margin-top: 2rem;
+    }
+
+    /* لصفحة الخبرة */
+    .experience-item>div {
+        margin-bottom: 1rem;
+    }
+
+    .job-details {
+        padding-right: 15px !important;
+    }
+
+    .job-description {
+        border-left: none;
+        padding-right: 15px;
+    }
+
+    /* لصفحة المهارات */
+    .skill-category-group {
+        margin-bottom: 2rem;
+    }
+
+    .skill-details-list {
+        grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+        gap: 10px;
+    }
+
+    .skill-tag {
+        padding: 0.5rem 0.8rem;
+        font-size: 0.8rem;
+        min-height: 40px;
+    }
+
+    .footer-line {
+        justify-content: center !important;
+    }
+}
